@@ -22,3 +22,13 @@ Scenario: Updating a student's grade recalculates the average
   And I can see the average "7.5" on the students page
   When I update the grade of the student "João" to "5"
   Then I can see the average "6.5" on the students page
+
+Scenario: Trying to register a student with an invalid grade
+  Given I am at the students page
+  And I have registered the student "Paulo" with grade "6"
+  And I have registered the student "Maria" with grade "7.5"
+  And I can see the average "6.75" on the students page
+  When I try to register the student "Carlos" with grade "15"
+  Then I can see an error message "Grade must be between 0 and 10"
+  And I cannot see the student "Carlos" on the students page
+  And I can see the average "6.75" on the students page
