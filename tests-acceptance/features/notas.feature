@@ -5,7 +5,7 @@ Feature: Register students grades
 
 Scenario: Registering students' grades
   Given I am at the students page
-  Given I cannot see an average at the end of the students' grades list
+  And I cannot see an average at the end of the students' grades list
   When I try to register the student "Paulo" with grade "6"
   And I try to register the student "Maria" with grade "7.5"
   And I try to register the student "João" with grade "8"
@@ -15,7 +15,7 @@ Scenario: Registering students' grades
 
 Scenario: Updating a student's grade recalculates the average
   Given I am at the students page
-  Given I have registered the student "Paulo" with grade "6"
+  And I have registered the student "Paulo" with grade "6"
   And I have registered the student "Maria" with grade "7.5"
   And I have registered the student "João" with grade "8"
   And I can see the average "7.17" on the students page
@@ -24,7 +24,7 @@ Scenario: Updating a student's grade recalculates the average
 
 Scenario: Removing a student recalculates the average
   Given I am at the students page
-  Given I have registered the student "Paulo" with grade "6"
+  And I have registered the student "Paulo" with grade "6"
   And I have registered the student "Maria" with grade "7.5"
   And I have registered the student "João" with grade "8"
   And I can see the average "7.17" on the students page
