@@ -1,7 +1,7 @@
 Feature: Register students grades
   As a professor
   I want to register students grades
-  So that I can calculate the average of students' grades
+  So that I can measure my students' learning by calculating the average of their grades
 
 Scenario: Registering students' grades
   Given I am at the students page
