@@ -9,4 +9,5 @@ Scenario: Registering students' grades
   When I try to register the student "Paulo" with grade "6"
   And I try to register the student "Maria" with grade "7.5"
   And I try to register the student "João" with grade "8"
+  And I try to register the student "Helena" with grade "7.5"
   Then I can see the average "7.5" on the students page
