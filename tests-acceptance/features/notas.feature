@@ -11,3 +11,12 @@ Scenario: Registering students' grades
   And I try to register the student "João" with grade "8"
   And I try to register the student "Helena" with grade "7.5"
   Then I can see the average "7.5" on the students page
+
+Scenario: Updating a student's grade recalculates the average
+  Given I am at the students page
+  Given I have registered the student "Paulo" with grade "6"
+  And I have registered the student "Maria" with grade "7.5"
+  And I have registered the student "João" with grade "8"
+  And I can see the average "7.17" on the students page
+  When I update the grade of the student "João" to "5"
+  Then I can see the average "6.17" on the students page
